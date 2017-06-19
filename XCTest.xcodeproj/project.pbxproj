@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5BDF3A641EF87554005E40E9 /* SwiftXCTest-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BDF3A631EF87554005E40E9 /* SwiftXCTest-Bridging-Header.h */; };
 		AE2FE0FB1CFE86DB003EF0D7 /* XCAbstractTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2FE0EA1CFE86DB003EF0D7 /* XCAbstractTest.swift */; };
 		AE2FE0FE1CFE86DB003EF0D7 /* XCTAssert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2FE0ED1CFE86DB003EF0D7 /* XCTAssert.swift */; };
 		AE2FE0FF1CFE86DB003EF0D7 /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2FE0EE1CFE86DB003EF0D7 /* XCTestCase.swift */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		5B5D86DB1BBC74AD00234F36 /* SwiftXCTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftXCTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BDF3A631EF87554005E40E9 /* SwiftXCTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftXCTest-Bridging-Header.h"; sourceTree = "<group>"; };
 		AE2FE0EA1CFE86DB003EF0D7 /* XCAbstractTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCAbstractTest.swift; sourceTree = "<group>"; };
 		AE2FE0ED1CFE86DB003EF0D7 /* XCTAssert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTAssert.swift; sourceTree = "<group>"; };
 		AE2FE0EE1CFE86DB003EF0D7 /* XCTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				AE2FE1121CFE86E6003EF0D7 /* XCPredicateExpectation.swift */,
 				AE2FE1131CFE86E6003EF0D7 /* XCTestCaseSuite.swift */,
 				AE2FE1141CFE86E6003EF0D7 /* XCTestInternalObservation.swift */,
+				5BDF3A631EF87554005E40E9 /* SwiftXCTest-Bridging-Header.h */,
 			);
 			path = Private;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BDF3A641EF87554005E40E9 /* SwiftXCTest-Bridging-Header.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +288,7 @@
 				TargetAttributes = {
 					5B5D86DA1BBC74AD00234F36 = {
 						CreatedOnToolsVersion = 7.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0900;
 					};
 					DAA333B51C267AD6000CC115 = {
 						CreatedOnToolsVersion = 7.2;
@@ -471,6 +475,7 @@
 		5B5D86E41BBC74AD00234F36 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				"FRAMEWORK_SEARCH_PATHS[sdk=macosx*]" = (
@@ -489,6 +494,10 @@
 				PRODUCT_BUNDLE_PACKAGE_TYPE = FMWK;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator";
+				SWIFT_INDEX_STORE_ENABLE = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/XCTest/Private/SwiftXCTest-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3,4";
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 				USER_HEADER_SEARCH_PATHS = $BUILT_PRODUCTS_DIR/usr/local/include/CoreFoundation;
@@ -499,6 +508,7 @@
 		5B5D86E51BBC74AD00234F36 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				"FRAMEWORK_SEARCH_PATHS[sdk=macosx*]" = $BUILT_PRODUCTS_DIR;
@@ -514,6 +524,9 @@
 				PRODUCT_BUNDLE_PACKAGE_TYPE = FMWK;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator";
+				SWIFT_INDEX_STORE_ENABLE = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/XCTest/Private/SwiftXCTest-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3,4";
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 				USER_HEADER_SEARCH_PATHS = $BUILT_PRODUCTS_DIR/usr/local/include/CoreFoundation;

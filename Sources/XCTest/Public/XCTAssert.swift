@@ -158,6 +158,11 @@ public func XCTAssert(_ expression: @autoclosure () throws -> Bool, _ message: @
     XCTAssertTrue(expression, message, file: file, line: line)
 }
 
+public func XCTAssertIsFatal(_ expression: () -> Void, _ message: @autoclosure () -> String = "", file: StaticString = #file, line: UInt = #line) {
+    let res = __try(SIGILL, expression, nil)
+    XCTAssert(res == false, message, file: file, line: line)
+}
+
 public func XCTAssertEqual<T: Equatable>(_ expression1: @autoclosure () throws -> T, _ expression2: @autoclosure () throws -> T, _ message: @autoclosure () -> String = "", file: StaticString = #file, line: UInt = #line) {
     _XCTEvaluateAssertion(.equal, message: message, file: file, line: line) {
         let (value1, value2) = (try expression1(), try expression2())
